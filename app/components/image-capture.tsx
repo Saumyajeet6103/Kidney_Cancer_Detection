@@ -10,6 +10,7 @@ const ImageCapture = () => {
     const [result, setResult] = useState<'positive' | 'negative' | null>(null)
     const [confidence, setConfidence] = useState<number | null>(null)
     const [error, setError] = useState<string | null>(null)
+    const [diagnosisText, setDiagnosisText] = useState<string | null>(null)
     
     const videoRef = useRef<HTMLVideoElement>(null)
     const fileInputRef = useRef<HTMLInputElement>(null)
@@ -85,6 +86,7 @@ const ImageCapture = () => {
         setResult(null)
         setConfidence(null)
         setError(null)
+        setDiagnosisText(null)
         setCaptureMode('options')
         
         // If we have an active camera stream, stop it
@@ -122,15 +124,53 @@ const ImageCapture = () => {
                 throw new Error(`Server responded with status: ${response.status}`)
             }
             
+            // Parse the response from the backend
             const data = await response.json()
             
             if (data.error) {
                 throw new Error(data.error)
             }
             
-            // Assuming the API returns { result: "positive" or "negative", confidence: number }
-            setResult(data.result)
-            setConfidence(data.confidence)
+            // Handle the specific response format from your backend
+            if (Array.isArray(data) && data.length > 0 && data[0].image) {
+                // Format: [{image: "Tumor"}]
+                const diagnosis = data[0].image
+                setDiagnosisText(diagnosis)
+                
+                // Set result based on diagnosis
+                if (diagnosis === "Tumor") {
+                    setResult('positive')
+                    setConfidence(95) // Placeholder confidence
+                } else if (diagnosis === "Normal") {
+                    setResult('negative')
+                    setConfidence(95) // Placeholder confidence
+                } else {
+                    // Handle other potential responses
+                    setResult('positive') // Default to positive for unknown responses
+                    setConfidence(85)
+                    setDiagnosisText(`Detected: ${diagnosis}`)
+                }
+            } else if (data.image) {
+                // Alternative format: {image: "Tumor"}
+                const diagnosis = data.image
+                setDiagnosisText(diagnosis)
+                
+                // Set result based on diagnosis
+                if (diagnosis === "Tumor") {
+                    setResult('positive')
+                    setConfidence(95) // Placeholder confidence
+                } else if (diagnosis === "Normal") {
+                    setResult('negative')
+                    setConfidence(95) // Placeholder confidence
+                } else {
+                    // Handle other potential responses
+                    setResult('positive') // Default to positive for unknown responses
+                    setConfidence(85)
+                    setDiagnosisText(`Detected: ${diagnosis}`)
+                }
+            } else {
+                throw new Error("Unexpected response format from server")
+            }
         } catch (err) {
             console.error('Error during analysis:', err)
             setError(err instanceof Error ? err.message : 'An unexpected error occurred')
@@ -260,9 +300,14 @@ const ImageCapture = () => {
                                             : "border-green-200 bg-green-50 text-green-700 dark:border-green-900 dark:bg-green-950/50 dark:text-green-400"
                                     )}>
                                         <h3 className="mb-2 font-semibold">
-                                            {result === 'positive' 
-                                                ? 'Potential tumor detected' 
-                                                : 'No tumor detected'}
+                                            {diagnosisText && (
+                                                <span className="font-bold">{diagnosisText}</span>
+                                            )}
+                                            {!diagnosisText && (
+                                                result === 'positive' 
+                                                    ? 'Potential tumor detected' 
+                                                    : 'No tumor detected'
+                                            )}
                                         </h3>
                                         <p className="text-sm">
                                             {result === 'positive' 
