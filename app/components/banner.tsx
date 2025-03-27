@@ -1,12 +1,11 @@
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
-import saasstellar from '../assets/saasstellar.svg'
 import { useForm } from '@formspree/react'
 import { Loader2Icon } from 'lucide-react'
-import Saastellar from './icons/saasstellar'
 import { cn } from '~/lib/utils'
 import useTheme from '~/hooks/use-theme'
+
 const Banner = () => {
     const [state, handleSubmit] = useForm('mjvqrzpz')
     const [theme] = useTheme()
@@ -19,28 +18,24 @@ const Banner = () => {
                         <div>
                             <h1 className='mt-4 scroll-m-20 text-center font-inter text-4xl font-extrabold tracking-tight lg:text-left lg:text-5xl'>
                                 <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
-                                    Empower{' '}
+                                    Early{' '}
                                 </span>
                                 <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
-                                    and{' '}
+                                    Detection{' '}
                                 </span>
                                 <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
-                                    boost{' '}
+                                    Can{' '}
                                 </span>
                                 <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
-                                    your{' '}
+                                    Save{' '}
                                 </span>
                                 <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
-                                    business's{' '}
-                                </span>
-                                <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
-                                    productivity
+                                    Lives
                                 </span>
                             </h1>
                         </div>
                         <p className='text-center text-lg text-muted-foreground lg:text-left'>
-                            Unlock the potential of your business with
-                            SaaSStellar. Experience simplified operations.
+                            Schedule a screening today with KidneyScan AI and take control of your kidney health.
                         </p>
                         <form
                             onSubmit={handleSubmit}
@@ -51,14 +46,14 @@ const Banner = () => {
                                     className='text-left text-muted-foreground'
                                     htmlFor='email-banner'
                                 >
-                                    Want an early invite?
+                                    Request more information
                                 </Label>
                                 <Input
                                     name='email-banner'
                                     required
                                     id='email-banner'
                                     type='email'
-                                    placeholder='john.doe@example.com'
+                                    placeholder='your.email@example.com'
                                 />
                             </div>
 
@@ -71,8 +66,8 @@ const Banner = () => {
                                     {state.submitting && (
                                         <Loader2Icon className='mr-2 h-4 w-4 animate-spin' />
                                     )}
-                                    {state.submitting && 'Joining'}
-                                    {!state.submitting && 'Join the waitlist'}
+                                    {state.submitting && 'Submitting'}
+                                    {!state.submitting && 'Contact Us'}
                                 </Button>
                             )}
                             {state.succeeded && (
@@ -80,36 +75,11 @@ const Banner = () => {
                                     variant={'secondary'}
                                     className='pointer-events-none w-full max-w-sm lg:w-fit'
                                 >
-                                    You're in! 🔥
+                                    Thank you! Our team will reach out shortly.
                                 </Button>
                             )}
                         </form>
                     </div>
-                    <Saastellar
-                        linearFrom='text-primary'
-                        className='absolute -bottom-10 right-5 hidden w-48 lg:block'
-                        linearTo={cn(
-                            'text-primary',
-                            theme === 'zinc' && 'text-zinc-600',
-                            theme === 'slate' && 'text-slate-600',
-                            theme === 'stone' && 'text-stone-600',
-                            theme === 'gray' && 'text-gray-600',
-                            theme === 'neutral' && 'text-neutral-600',
-                            theme === 'red' && 'text-red-600',
-                            theme === 'rose' && 'text-pink-600',
-                            theme === 'orange' && 'text-rose-600',
-                            theme === 'green' && 'text-emerald-600',
-                            theme === 'blue' && 'text-purple-600',
-                            theme === 'yellow' && 'text-yellow-600',
-                            theme === 'violet' && 'text-violet-600'
-                        )}
-                    />
-                    {/* <img
-                        src={saasstellar}
-                        alt=''
-                        width={196}
-                        className='absolute -bottom-10 right-5 hidden lg:block'
-                    /> */}
                 </div>
             </div>
             <div className='h-[1px] w-full bg-gradient-to-l from-primary to-transparent'></div>

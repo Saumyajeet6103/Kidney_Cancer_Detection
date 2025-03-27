@@ -12,23 +12,23 @@ import { buttonVariants } from './ui/button'
 const faqs = [
     {
         question:
-            'Can I integrate SaaSStellar with my existing business tools?',
-        answer: 'Yes, SaaSStellar supports integration with over 10 content management systems and other third-party tools.',
+            'How accurate is KidneyScan AI in detecting kidney cancer?',
+        answer: 'KidneyScan AI has a detection accuracy rate of over 95% in clinical trials, making it one of the most reliable non-invasive screening tools available for kidney cancer detection.',
     },
     {
         question:
-            'Are there any additional costs beyond the subscription fees?',
-        answer: "No, SaaSStellar's pricing plans include all core features and support. Additional costs may apply only if businesses opt for optional training, custom development, or premium support packages.",
+            'Is the KidneyScan AI screening procedure covered by insurance?',
+        answer: "Most major health insurance providers cover KidneyScan AI screening, especially for patients with risk factors. We recommend checking with your specific insurance provider for coverage details.",
     },
     {
         question:
-            'Can I switch between pricing plans as my business needs change?',
-        answer: "Yes, businesses can upgrade or downgrade between SaaSStellar's pricing plans at any time to better suit evolving operational requirements and budget constraints.",
+            'How long does the screening process take?',
+        answer: "The entire screening process takes approximately 20-30 minutes, with results typically available within 24-48 hours through our secure patient portal or via your healthcare provider.",
     },
     {
         question:
-            'Does SaaSStellar offer a trial period for testing its features?',
-        answer: 'Yes, SaaSStellar offers a trial period for potential users to explore its features and functionalities before committing to a subscription plan.',
+            'Is the KidneyScan AI technology painful or invasive?',
+        answer: 'No, KidneyScan AI technology is completely non-invasive and painless. It uses advanced imaging techniques that require no radiation, injections, or invasive procedures.',
     },
 ]
 
@@ -53,7 +53,7 @@ const FAQs = () => {
                     </h1>
                 </div>
                 <p className='text-lg text-muted-foreground'>
-                    Haven’t found what you’re looking for?{' '}
+                    Have more questions about our kidney cancer detection technology?{' '}
                     <a
                         href='#name'
                         className={cn(
@@ -61,7 +61,7 @@ const FAQs = () => {
                             'px-0 text-lg text-foreground'
                         )}
                     >
-                        Contact us.
+                        Contact our medical team.
                     </a>
                 </p>
                 <div className='mt-20 flex items-center justify-between'>

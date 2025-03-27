@@ -1,13 +1,15 @@
 import React from 'react'
-import Drupal from '~/components/icons/drupal'
-import Framer from '~/components/icons/framer'
-import Joomla from '~/components/icons/joomla'
-import Notion from '~/components/icons/notion'
-import Sanity from '~/components/icons/sanity'
-import Storyblok from '~/components/icons/storyblok'
-import Strapi from '~/components/icons/strapi'
-import Typedream from '~/components/icons/typedream'
-import Wordpress from '~/components/icons/wordpress'
+import {
+    ActivityIcon,
+    HeartPulseIcon,
+    Building2Icon,
+    HospitalIcon,
+    ShieldPlusIcon,
+    StethoscopeIcon,
+    HeartIcon,
+    Microscope,
+    GraduationCapIcon,
+} from 'lucide-react'
 import {
     Tooltip,
     TooltipContent,
@@ -16,52 +18,48 @@ import {
 } from '~/components/ui/tooltip'
 
 const Cms = () => {
-    const cms = [
+    const partners = [
         {
-            component: <Drupal height={42} width={42} />,
-            name: 'Drupal',
+            component: <HospitalIcon height={42} width={42} className="text-primary/80" />,
+            name: 'Memorial Health',
         },
         {
-            component: <Framer height={42} width={42} />,
-            name: 'Framer',
+            component: <HeartPulseIcon height={42} width={42} className="text-primary/80" />,
+            name: 'Kidney Care Centers',
         },
         {
-            component: <Joomla height={42} width={42} />,
-            name: 'Joomla',
+            component: <StethoscopeIcon height={42} width={42} className="text-primary/80" />,
+            name: 'MedTrust Alliance',
         },
         {
-            component: <Notion height={42} width={42} />,
-            name: 'Notion',
+            component: <Building2Icon height={42} width={42} className="text-primary/80" />,
+            name: 'University Medical Center',
         },
         {
-            component: <Sanity height={42} width={42} />,
-            name: 'Sanity',
+            component: <HeartIcon height={42} width={42} className="text-primary/80" />,
+            name: 'LifeSpan Health',
         },
         {
-            component: <Storyblok height={42} width={42} />,
-            name: 'Storyblok',
+            component: <ShieldPlusIcon height={42} width={42} className="text-primary/80" />,
+            name: 'Guardian Medical Group',
         },
         {
-            component: <Strapi height={42} width={42} />,
-            name: 'Strapi',
+            component: <ActivityIcon height={42} width={42} className="text-primary/80" />,
+            name: 'Vitality Healthcare',
         },
         {
-            component: <Typedream height={42} width={42} />,
-            name: 'Typedream',
-        },
-        {
-            component: <Wordpress height={42} width={42} />,
-            name: 'Wordpress',
+            component: <GraduationCapIcon height={42} width={42} className="text-primary/80" />,
+            name: 'Medical Research Institute',
         },
     ]
 
     return (
         <div className='mx-5'>
             <p className='mb-8 text-center text-sm font-medium text-muted-foreground'>
-                INTEGRATED WITH 10+ CONTENT MANAGEMENT SYSTEMS
+                TRUSTED BY LEADING HEALTHCARE PROVIDERS
             </p>
             <div className='mx-auto flex flex-wrap items-center justify-center gap-8 fill-foreground lg:gap-x-14'>
-                {cms.map((item) => (
+                {partners.map((item) => (
                     <React.Fragment key={item.name}>
                         <TooltipProvider delayDuration={100}>
                             <Tooltip>

@@ -1,4 +1,6 @@
 import { type MetaFunction } from '@remix-run/node'
+import { Link } from '@remix-run/react'
+import AppNavbar from '~/components/app-navbar'
 import Banner from '~/components/banner'
 import Cms from '~/components/cms'
 import Contact from '~/components/contact'
@@ -6,21 +8,23 @@ import FAQs from '~/components/faqs'
 import Features from '~/components/features'
 import Footer from '~/components/footer'
 import Hero from '~/components/hero'
-import Navbar from '~/components/navbar'
 import Pricing from '~/components/pricing'
+import UploadScan from '~/components/upload-scan'
+import { Button } from '~/components/ui/button'
+import { CameraIcon, MessageSquareIcon } from 'lucide-react'
 
 export const meta: MetaFunction = () => {
     return [
-        { title: 'SaaSStellar' },
+        { title: 'KidneyScan AI' },
         {
             name: 'description',
             content:
-                'Streamline operations and boost productivity with our innovative SaaS solutions. Unlock the power of seamless workflows and data-driven decisions. Experience growth with SaaSStellar."',
+                'Advanced kidney cancer detection technology powered by AI. Early detection saves lives. Fast, accurate, and non-invasive screening for kidney cancer. Trust KidneyScan AI for reliable results.',
         },
         {
             name: 'keywords',
             content:
-                'SaaS solutions, Streamlined operations, Boost productivity, Data-driven decisions, Workflow optimization, Business growth, Efficiency tools, Cloud-based software, Productivity software, Business innovation, SaaS platform, Seamless workflows, SaaS productivity, Data analytics, Streamline processes, Business efficiency, Growth strategies, SaaS benefits, Cloud solutions, Business software',
+                'Kidney cancer detection, Early cancer screening, Kidney tumor detection, AI medical diagnostics, Non-invasive cancer screening, Renal cell carcinoma, Kidney health, Medical imaging AI, Early detection saves lives, Cancer prevention, Kidney disease screening, Healthcare AI, Medical diagnostics, Cancer detection technology, Precision medicine, Medical innovation',
         },
         {
             name: 'robots',
@@ -28,7 +32,7 @@ export const meta: MetaFunction = () => {
         },
         {
             name: 'author',
-            content: 'Nader Ferjani',
+            content: 'KidneyScan AI Team',
         },
         {
             tagName: 'link',
@@ -59,11 +63,11 @@ export const meta: MetaFunction = () => {
             tagName: 'link',
             rel: 'mask-icon',
             href: '/safari-pinned-tab.svg',
-            color: '#5bbad5',
+            color: '#e11d48',
         },
         {
             name: 'msapplication-TileColor',
-            content: '#da532c',
+            content: '#e11d48',
         },
         {
             name: 'theme-color',
@@ -72,21 +76,21 @@ export const meta: MetaFunction = () => {
         {
             property: 'og:title',
             content:
-                'SaaSStellar - Streamline Operations and Boost Productivity',
+                'KidneyScan AI - Advanced Kidney Cancer Detection Technology',
         },
         {
             property: 'og:description',
             content:
-                'Discover how SaaSStellar can help you streamline operations, make data-driven decisions, and drive business growth. Experience the power of seamless workflows and efficiency tools.',
+                'Early detection saves lives. Our AI-powered technology provides fast, accurate, and non-invasive screening for kidney cancer with reliable results.',
         },
         {
             property: 'og:image',
             name: 'og:image',
-            content: 'https://saasstellar.nader.run/saasstellar-og-image.png',
+            content: 'https://kidneyscanai.com/kidneyscan-og-image.png',
         },
         {
             property: 'og:url',
-            content: 'https://saasstellar.nader.run/',
+            content: 'https://kidneyscanai.com/',
         },
         {
             property: 'og:type',
@@ -99,24 +103,24 @@ export const meta: MetaFunction = () => {
         {
             name: 'twitter:title',
             content:
-                'SaaSStellar - Streamline Operations and Boost Productivity',
+                'KidneyScan AI - Advanced Kidney Cancer Detection Technology',
         },
         {
             name: 'twitter:description',
             content:
-                'Discover how SaaSStellar can help you streamline operations, make data-driven decisions, and drive business growth. Experience the power of seamless workflows and efficiency tools.',
+                'Early detection saves lives. Our AI-powered technology provides fast, accurate, and non-invasive screening for kidney cancer with reliable results.',
         },
         {
             name: 'twitter:image',
-            content: 'https://saasstellar.nader.run/saasstellar-og-image.png',
+            content: 'https://kidneyscanai.com/kidneyscan-og-image.png',
         },
         {
             name: 'twitter:url',
-            content: 'https://saasstellar.nader.run/',
+            content: 'https://kidneyscanai.com/',
         },
         {
             name: 'twitter:domain',
-            content: 'saasstellar.nader.run',
+            content: 'kidneyscanai.com',
         },
     ]
 }
@@ -124,8 +128,22 @@ export const meta: MetaFunction = () => {
 export default function Index() {
     return (
         <div className='dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsla(var(--primary)_/_30%),#ffffff00)]'>
-            <Navbar />
+            <AppNavbar />
             <Hero />
+            <div className="mx-auto mt-16 flex max-w-xl flex-col gap-4 px-5 sm:flex-row">
+                <Button asChild className="flex items-center gap-2" size="lg">
+                    <Link to="/scan">
+                        <CameraIcon className="h-5 w-5" />
+                        Analyze Kidney Scan
+                    </Link>
+                </Button>
+                <Button asChild variant="outline" className="flex items-center gap-2" size="lg">
+                    <Link to="/chat">
+                        <MessageSquareIcon className="h-5 w-5" />
+                        Chat with Assistant
+                    </Link>
+                </Button>
+            </div>
             <Cms />
             <Features />
             <Pricing />

@@ -16,30 +16,30 @@ const Pricing = () => {
                 <div>
                     <span className='rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-primary dark:bg-primary/25'>
                         <span className='brightness-[1.7]'>
-                            Adaptable Pricing
+                            Service Options
                         </span>
                     </span>
                     <h1 className='mt-4 scroll-m-20 font-inter text-4xl font-extrabold tracking-tight lg:text-5xl'>
                         <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
-                            Choose{' '}
+                            Healthcare{' '}
                         </span>
                         <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
-                            your{' '}
+                            Solutions{' '}
                         </span>
                         <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
-                            plan
+                            Plans
                         </span>
                     </h1>
                 </div>
                 <p className='text-lg text-muted-foreground'>
-                    Select the ideal plan for your business requirements
+                    Choose the right screening and monitoring solution for your healthcare needs
                 </p>
                 <div className='mt-20 flex items-center justify-center space-x-2'>
                     <Label
                         htmlFor='price-toggle'
                         className={cn(checked && 'text-muted-foreground')}
                     >
-                        Monthly
+                        One-time
                     </Label>
                     <Switch
                         id='price-toggle'
@@ -53,45 +53,45 @@ const Pricing = () => {
                         htmlFor='price-toggle'
                         className={cn(!checked && 'text-muted-foreground')}
                     >
-                        Annually
+                        Annual Plan
                     </Label>
                 </div>
                 <div className='mt-10 flex flex-col items-center gap-6 lg:flex-row lg:items-stretch lg:justify-around lg:px-6'>
                     <div className='gradient-border relative w-full max-w-sm flex-grow basis-0 rounded-md bg-gradient-to-bl from-primary/10 via-transparent to-transparent p-8 text-left before:bg-gradient-to-bl before:from-primary/30 before:to-primary/5 lg:max-w-none'>
                         <div className='flex flex-col gap-3 text-left'>
-                            <p>Basic</p>
+                            <p>Basic Screening</p>
                             <div className='flex items-start gap-2'>
                                 <span className='text-2xl text-muted-foreground'>
                                     $
                                 </span>
                                 <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-5xl font-medium text-transparent'>
-                                    0
+                                    199
                                 </span>
                             </div>
                             <p className='text-muted-foreground'>
-                                Ideal for startups and small businesses
+                                Essential screening for individuals
                             </p>
                         </div>
                         <ul className='mt-8 flex flex-col gap-4'>
                             <li className='flex gap-2'>
                                 <CheckIcon className='mt-0.5 h-5 w-5 shrink-0 text-primary' />
-                                <span>Up to 10 team members</span>
+                                <span>Single kidney screening test</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>50GB of cloud storage</span>
+                                <span>AI-powered analysis</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>Streamlined operations</span>
+                                <span>Detailed medical report</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>Workflow optimization</span>
+                                <span>Patient portal access</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>Basic analytics</span>
+                                <span>Digital results delivery</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
@@ -99,105 +99,100 @@ const Pricing = () => {
                             </li>
                         </ul>
                         <Button className='mt-8 w-full' variant={'outline'}>
-                            Get started
+                            Schedule Screening
                         </Button>
                     </div>
                     <div className='gradient-border relative w-full max-w-sm flex-grow basis-0 rounded-md bg-gradient-to-b from-primary/10 via-transparent to-transparent p-8 before:bg-gradient-to-b before:from-primary before:to-primary/10 lg:max-w-none'>
                         <div className='flex flex-col gap-3 text-left'>
-                            <p>Pro</p>
+                            <p>Continuous Monitoring</p>
                             <div className='flex items-start gap-2'>
                                 <span className='text-2xl text-muted-foreground'>
                                     $
                                 </span>
                                 <span className='flex items-center gap-2 bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-5xl font-medium text-transparent'>
-                                    {checked ? '299' : '29'}
+                                    {checked ? '599' : '249'}
                                     {checked && (
                                         <Badge variant={'outline'}>
-                                            SAVE 15%
+                                            SAVE 40%
                                         </Badge>
                                     )}
                                 </span>
                             </div>
                             <p className='text-muted-foreground'>
-                                Perfect for growing businesses
+                                Regular monitoring for at-risk patients
                             </p>
                         </div>
                         <ul className='mt-8 flex flex-col gap-4 text-left'>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>Up to 50 team members</span>
+                                <span>{checked ? "4 screenings per year" : "Single comprehensive screening"}</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>250GB of cloud storage</span>
+                                <span>Enhanced AI detection</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>Advanced workflow tools</span>
+                                <span>Comparative analysis</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>In-depth analytics</span>
+                                <span>Physician consultation</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>Priority email and phone support</span>
+                                <span>Priority scheduling</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>Integration with third-party tools</span>
+                                <span>Full medical report integration</span>
                             </li>
                         </ul>
-                        <Button className='mt-8 w-full'>Upgrade now</Button>
+                        <Button className='mt-8 w-full'>Enroll Now</Button>
                     </div>
                     <div className='gradient-border relative max-w-sm flex-grow basis-0 rounded-md bg-gradient-to-br from-primary/10 via-transparent to-transparent p-8 before:bg-gradient-to-br before:from-primary/30 before:to-primary/5 lg:max-w-none'>
                         <div className='flex flex-col gap-3 text-left'>
-                            <p>Premium</p>
+                            <p>Healthcare Provider</p>
                             <div className='flex items-start gap-2'>
                                 <span className='text-2xl text-muted-foreground'>
-                                    $
+                                    
                                 </span>
                                 <span className='flex items-center gap-2 bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-5xl font-medium text-transparent'>
-                                    {checked ? '699' : '69'}
-                                    {checked && (
-                                        <Badge variant={'outline'}>
-                                            SAVE 15%
-                                        </Badge>
-                                    )}
+                                    Custom
                                 </span>
                             </div>
                             <p className='text-muted-foreground'>
-                                Comprehensive solutions for enterprises
+                                Enterprise solutions for medical facilities
                             </p>
                         </div>
                         <ul className='mt-8 flex flex-col gap-4 text-left'>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>Unlimited team members</span>
+                                <span>Unlimited patient screenings</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>1TB of cloud storage</span>
+                                <span>Full EMR/EHR integration</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>Customizable options</span>
+                                <span>Customized reporting</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>Dedicated account manager</span>
+                                <span>Dedicated medical liaison</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>24/7 priority support</span>
+                                <span>24/7 technical support</span>
                             </li>
                             <li className='flex gap-2'>
                                 <CheckIcon className='5 mt-0.5 shrink-0 text-primary' />
-                                <span>Advanced security features</span>
+                                <span>Staff training & certification</span>
                             </li>
                         </ul>
                         <Button className='mt-8 w-full' variant={'outline'}>
-                            Contact us
+                            Request Information
                         </Button>
                     </div>
                 </div>
