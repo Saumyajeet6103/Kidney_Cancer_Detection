@@ -61,7 +61,10 @@ const ImageCapture = () => {
         
         const reader = new FileReader()
         reader.onloadend = () => {
-            setImageData(reader.result as string)
+            // Make sure to update state only after the file is read
+            const result = reader.result as string
+            setImageData(result)
+            // Ensure we change to preview mode after the image data is set
             setCaptureMode('preview')
         }
         reader.readAsDataURL(file)
@@ -69,8 +72,11 @@ const ImageCapture = () => {
     
     // Trigger file input click
     const triggerFileUpload = () => {
-        setCaptureMode('upload')
-        fileInputRef.current?.click()
+        // Just opening the file dialog, don't change mode yet
+        if (fileInputRef.current) {
+            fileInputRef.current.value = '' // Clear any previous selection
+            fileInputRef.current.click()
+        }
     }
     
     // Reset the component
@@ -80,6 +86,14 @@ const ImageCapture = () => {
         setConfidence(null)
         setError(null)
         setCaptureMode('options')
+        
+        // If we have an active camera stream, stop it
+        if (videoRef.current && videoRef.current.srcObject) {
+            const stream = videoRef.current.srcObject as MediaStream
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop())
+            }
+        }
     }
     
     // Analyze the image
