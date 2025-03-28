@@ -15,19 +15,25 @@ export const changeTheme = (theme: string) => {
 }
 
 export const getTheme = (): ThemeName => {
-    let theme: ThemeName = 'red'
+    let theme: ThemeName = 'zinc'
     if (typeof window !== 'undefined') {
-        theme = localStorage.getItem('theme') as ThemeName
-        if (theme !== null) {
-            theme = theme.replace(/['"]+/g, '') as ThemeName
-            return theme
+        const storedTheme = localStorage.getItem('theme')
+        if (storedTheme) {
+            // Remove any quotes and parse as JSON if it's a JSON string
+            try {
+                const parsedTheme = JSON.parse(storedTheme)
+                theme = typeof parsedTheme === 'string' ? parsedTheme as ThemeName : 'zinc'
+            } catch {
+                // If it's not valid JSON, just use the string directly after removing quotes
+                theme = storedTheme.replace(/['"]+/g, '') as ThemeName
+            }
         }
-        return 'red'
     }
     return theme
 }
 
-const themeAtom = atomWithStorage<ThemeName>('theme', 'red')
+// Initialize with zinc as the default theme if no theme is present in storage
+const themeAtom = atomWithStorage<ThemeName>('theme', 'zinc')
 
 export default function useTheme() {
     return useAtom(themeAtom)

@@ -16,7 +16,7 @@ export default function AboutPage() {
     return (
         <div className='dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsla(var(--primary)_/_30%),#ffffff00)]'>
             <AppNavbar />
-            <main className="mx-auto max-w-4xl px-5 pb-24 pt-16">
+            <main className="mx-auto max-w-4xl px-5 pb-28 lg:pb-24 pt-16">
                 <div className="space-y-16">
                     <section>
                         <h1 className="font-inter text-4xl font-extrabold tracking-tight lg:text-5xl">

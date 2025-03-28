@@ -31,7 +31,15 @@ export async function loader() {
 export default function App() {
     const { ENV } = useLoaderData<typeof loader>()
     useLayoutEffect(() => {
-        changeTheme(getTheme())
+        // Get the theme from localStorage and apply it
+        const currentTheme = getTheme()
+        if (currentTheme) {
+            // Make sure to apply the theme CSS variables to the document
+            changeTheme(currentTheme)
+            
+            // Make sure the HTML element has the dark class for dark mode
+            document.documentElement.classList.add('dark')
+        }
     }, [])
     return (
         <html lang='en' className='dark'>

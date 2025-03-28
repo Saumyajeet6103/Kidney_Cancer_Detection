@@ -17,7 +17,7 @@ export default function ChatPage() {
     return (
         <div className='dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsla(var(--primary)_/_30%),#ffffff00)]'>
             <AppNavbar />
-            <main className="pb-24">
+            <main className="pb-28 lg:pb-24">
                 <ChatBot />
             </main>
             <Footer />
