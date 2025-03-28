@@ -110,7 +110,7 @@ const ImageCapture = () => {
             const base64Image = imageData.split(',')[1]
             
             // Make API request to backend
-            const response = await fetch('https://832e-2405-201-2011-28da-9080-a5fc-672c-98f4.ngrok-free.app/predict', {
+            const response = await fetch('https://7bf4-2405-201-2011-28da-9080-a5fc-672c-98f4.ngrok-free.app/predict', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
