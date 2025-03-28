@@ -44,7 +44,7 @@ const Contact = () => {
                             rel='noopener noreferrer'
                         >
                             <TwitterIcon className='h-6 w-6 text-primary' />{' '}
-                            @NaderFerjani
+                            
                         </a>
                         <a
                             href='https://www.linkedin.com/in/nader-ferjani/'
@@ -53,11 +53,11 @@ const Contact = () => {
                             rel='noopener noreferrer'
                         >
                             <LinkedinIcon className='h-6 w-6 text-primary' />{' '}
-                            <span>nader-ferjani</span>
+                            <span></span>
                         </a>
                         <span className='flex items-center gap-2'>
                             <Discord className='h-6 w-6 fill-primary' />{' '}
-                            <span>stormynight9</span>
+                            <span></span>
                         </span>
                     </div>
                 </div>
