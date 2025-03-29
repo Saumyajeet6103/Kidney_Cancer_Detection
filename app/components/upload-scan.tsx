@@ -181,8 +181,8 @@ const UploadScan = () => {
                                         </h3>
                                         <p className="text-sm">
                                             {result === 'positive' 
-                                                ? `Our AI has detected potential abnormalities with ${confidence}% confidence. Please consult with a healthcare professional for a thorough evaluation.` 
-                                                : `Our AI analysis shows no signs of kidney tumor with ${confidence}% confidence. Regular screening is still recommended.`}
+                                                ? `Our AI has detected potential abnormalities. Please consult with a healthcare professional for a thorough evaluation.` 
+                                                : `Our AI analysis shows no signs of kidney tumor. Regular screening is still recommended.`}
                                         </p>
                                     </div>
                                     <div className="flex gap-2">
