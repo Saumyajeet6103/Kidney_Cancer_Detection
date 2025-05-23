@@ -108,9 +108,9 @@ const ImageCapture = () => {
         try {
             // Extract base64 data from the image data URL
             const base64Image = imageData.split(',')[1]
-            
+           
             // Make API request to backend
-            const response = await fetch('https://kidney-5jjn.onrender.com/predict', {
+            const response = await fetch('https://0b33-2402-a00-152-6e28-6441-9c6d-923b-32f.ngrok-free.app//predict', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
