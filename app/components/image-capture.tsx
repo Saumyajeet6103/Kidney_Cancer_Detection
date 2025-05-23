@@ -110,6 +110,7 @@ const ImageCapture = () => {
             const base64Image = imageData.split(',')[1]
            
             // Make API request to backend
+       //render     // const response = await fetch('https://kidney-disease-backend-u4as.onrender.com//predict', {
             const response = await fetch('https://0b33-2402-a00-152-6e28-6441-9c6d-923b-32f.ngrok-free.app//predict', {
                 method: 'POST',
                 headers: {
