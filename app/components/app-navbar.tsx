@@ -3,7 +3,8 @@ import {
     HomeIcon, 
     CameraIcon, 
     MessageSquareIcon, 
-    InfoIcon
+    InfoIcon,
+    ViewIcon
 } from 'lucide-react'
 import { cn } from '~/lib/utils'
 import {
@@ -33,6 +34,11 @@ const AppNavbar = () => {
             name: 'Image Analysis', 
             path: '/scan',
             icon: <CameraIcon className="h-5 w-5" />
+        },
+        { 
+            name: 'AR View', 
+            path: '/ar-view',
+            icon: <ViewIcon className="h-5 w-5" />
         },
         { 
             name: 'Assistant', 

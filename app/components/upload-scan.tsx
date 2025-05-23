@@ -57,7 +57,7 @@ const UploadScan = () => {
                     image: base64Image
                 })
             })
-            
+           
             if (!response.ok) {
                 throw new Error(`Server responded with status: ${response.status}`)
             }

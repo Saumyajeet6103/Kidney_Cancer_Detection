@@ -1,5 +1,5 @@
 import { Link, useLocation } from '@remix-run/react'
-import { HomeIcon, CameraIcon, MessageSquareIcon, InfoIcon } from 'lucide-react'
+import { HomeIcon, CameraIcon, MessageSquareIcon, InfoIcon, ViewIcon } from 'lucide-react'
 import { cn } from '~/lib/utils'
 
 const MobileBottomNav = () => {
@@ -16,6 +16,11 @@ const MobileBottomNav = () => {
             name: 'Image Analysis', 
             path: '/scan',
             icon: <CameraIcon className="h-5 w-5" />
+        },
+        { 
+            name: 'AR View', 
+            path: '/ar-view',
+            icon: <ViewIcon className="h-5 w-5" />
         },
         { 
             name: 'Assistant', 
